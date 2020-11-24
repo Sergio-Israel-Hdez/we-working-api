@@ -32,7 +32,7 @@ namespace we_working_api.Controllers
         }
         [HttpGet]
         [Route("[action]")]
-        [Authorize(Roles = "1,2")]
+        [Authorize(Roles = "1")]
         public IActionResult GetAllProyectos()
         {
             var result = _proyecto.Get(filter: null, orderBy: null, includeProperties: "ComentarioProyectos,EmpleadoProyectos,TareaEmpleadoProyectos");
