@@ -17,6 +17,9 @@ using System.Text;
 using System.Text.Json.Serialization;
 using System.Threading.Tasks;
 using we_working_api.Data;
+/// <summary>
+/// startup modificado para verificar si mi usuario teamcity recibe los cambios 
+/// </summary>
 
 namespace we_working_api
 {
