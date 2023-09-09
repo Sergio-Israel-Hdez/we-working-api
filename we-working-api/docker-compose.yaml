@@ -1,0 +1,13 @@
+version: '3.8'
+
+services:
+  web:
+    build:
+      context: .
+      dockerfile: Dockerfile  # Nombre del Dockerfile que definiste anteriormente
+    ports:
+      - "9098:9098"  # Mapea el puerto 80 del host al puerto 80 del contenedor
+    container_name: we-working-api  # Nombre de tu contenedor
+    restart: always  # Configuración para reiniciar siempre el contenedor en caso de fallo
+
+# Agrega otros servicios o contenedores si es necesario
