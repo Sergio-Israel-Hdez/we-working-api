@@ -24,13 +24,11 @@ pipeline {
                         sh 'pwd'
                         //sh 'ls -R'
                         dir('we-working-api') {
-                            //sh 'pwd'  // Opcional: mostrar el directorio actual después del cambio
-                            sh 'ls -R'
-                            // Cambiar al directorio 'we-working-api' dentro de 'we-working-api'
-                            dir('we-working-api') {
-                                //sh 'pwd'  // Opcional: mostrar el directorio actual después del cambio
-                                sh 'ls -R'
-                            }
+                            sh 'pwd'  // Opcional: mostrar el directorio actual después del cambio
+                            //sh 'ls -R'
+                            sh ''' 
+                            docker compose we-working-api/docker-compose.yml
+                            '''
                         }
                     } else {
                         currentBuild.result = 'FAILURE'
