@@ -2,7 +2,7 @@ pipeline {
     agent any
 
     stages {
-        stage('Paso A') {
+        stage('Dotnet Build') {
             steps {
                 // Coloca aquí los comandos o scripts para el Paso A
                 // Por ejemplo: sh 'mi_comando'
@@ -10,7 +10,7 @@ pipeline {
             }
         }
 
-        stage('Paso B') {
+        stage('Docker compose') {
             when {
                 expression {
                     currentBuild.resultIsBetterOrEqualTo('SUCCESS')
