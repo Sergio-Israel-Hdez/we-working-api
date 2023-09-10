@@ -27,7 +27,7 @@ pipeline {
                             sh 'pwd'  // Opcional: mostrar el directorio actual después del cambio
                             //sh 'ls -R'
                             sh ''' 
-                            docker compose we-working-api/docker-compose.yml
+                            docker compose docker-compose.yml
                             '''
                         }
                     } else {
