@@ -22,8 +22,8 @@ pipeline {
                         // Ejecuta el comando 'dotnet build' en el Paso B
                         echo "aqui tendra que ir el docker compose?"
                         sh '''
-                            docker docker-compose --version
-                            docker docker-compose up
+                            docker compose --version
+                            docker compose up
                             '''
                     } else {
                         currentBuild.result = 'FAILURE'
