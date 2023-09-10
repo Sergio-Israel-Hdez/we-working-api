@@ -27,9 +27,7 @@ pipeline {
                             //sh 'pwd'  // Opcional: mostrar el directorio actual después del cambio
                             sh 'ls -R'
                                                 // Establecer la variable de entorno DOCKER_HOST para usar el socket Unix
-                            withEnv(["DOCKER_HOST=unix:///home/sergio/.docker/desktop/docker.sock"]) {
-                                sh 'docker-compose up'
-                            }
+                            sh 'docker-compose up'
                         }
                     } else {
                         currentBuild.result = 'FAILURE'
