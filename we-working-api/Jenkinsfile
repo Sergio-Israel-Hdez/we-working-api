@@ -1,0 +1,32 @@
+pipeline {
+    agent any
+
+    stages {
+        stage('Paso A') {
+            steps {
+                // Coloca aquí los comandos o scripts para el Paso A
+                // Por ejemplo: sh 'mi_comando'
+              sh 'dotnet build'
+            }
+        }
+
+        stage('Paso B') {
+            when {
+                expression {
+                    currentBuild.resultIsBetterOrEqualTo('SUCCESS')
+                }
+            }
+            steps {
+                script {
+                    if (currentBuild.resultIsBetterOrEqualTo('SUCCESS')) {
+                        // Ejecuta el comando 'dotnet build' en el Paso B
+                        echo "aqui tendra que ir el docker compose?"
+                    } else {
+                        currentBuild.result = 'FAILURE'
+                        error('Paso A falló, por lo que Paso B se omite.')
+                    }
+                }
+            }
+        }
+    }
+}
