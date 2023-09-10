@@ -16,7 +16,6 @@ namespace we_working_api.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-    [Authorize(AuthenticationSchemes = JwtBearerDefaults.AuthenticationScheme)]
     public class ProyectoController : ControllerBase
     {
         private readonly ILogger<ProyectoController> _logger;
