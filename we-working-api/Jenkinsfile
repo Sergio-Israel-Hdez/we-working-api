@@ -23,7 +23,7 @@ pipeline {
                         echo "aqui tendra que ir el docker compose?"
                         sh '''
                             docker compose version
-                            docker-compose -f <docker-compose.yml> logs 
+                            docker-compose -f docker-compose.yml logs 
                             '''
                     } else {
                         currentBuild.result = 'FAILURE'
