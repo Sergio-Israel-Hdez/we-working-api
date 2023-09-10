@@ -4,10 +4,18 @@ services:
   web:
     build:
       context: .
-      dockerfile: Dockerfile  # Nombre del Dockerfile que definiste anteriormente
+      dockerfile: Dockerfile
+    container_name: we-working-api
+    restart: always
+    networks:
+      mynetwork:
+        ipv4_address: 172.18.0.10  # Cambia esta dirección IP a la que desees
     ports:
-      - "5098:5098"  # Mapea el puerto 80 del host al puerto 80 del contenedor
-    container_name: we-working-api  # Nombre de tu contenedor
-    restart: always  # Configuración para reiniciar siempre el contenedor en caso de fallo
+      - "5098:5098"
 
-# Agrega otros servicios o contenedores si es necesario
+networks:
+  mynetwork:
+    driver: bridge
+    ipam:
+      config:
+        - subnet: 172.18.0.0/16
