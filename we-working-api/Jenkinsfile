@@ -22,7 +22,7 @@ pipeline {
                         // Ejecuta el comando 'dotnet build' en el Paso B
                         echo "aqui tendra que ir el docker compose?"
                         sh 'pwd'
-                        sh 'find . -type d'
+                        sh 'ls -R'
                         //sh ''' docker compose version docker-compose -f docker-compose.yml logs '''
                     } else {
                         currentBuild.result = 'FAILURE'
