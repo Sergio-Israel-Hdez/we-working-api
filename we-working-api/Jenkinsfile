@@ -22,7 +22,7 @@ pipeline {
                         // Ejecuta el comando 'dotnet build' en el Paso B
                         echo "aqui tendra que ir el docker compose?"
                         sh '''
-                            docker compose --version
+                            docker compose version
                             docker compose up
                             '''
                     } else {
