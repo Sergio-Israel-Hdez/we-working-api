@@ -23,7 +23,10 @@ pipeline {
                         echo "aqui tendra que ir el docker compose?"
                         sh 'pwd'
                         //sh 'ls -R'
-                        sh ''' docker compose version docker-compose -f we-working-api/docker-compose.yml logs '''
+                        sh ''' 
+                        docker compose version 
+                        docker-compose -f we-working-api/docker-compose.yml logs
+                        '''
                     } else {
                         currentBuild.result = 'FAILURE'
                         error('Paso A falló, por lo que Paso B se omite.')
