@@ -24,10 +24,10 @@ pipeline {
                         sh 'pwd'
                         //sh 'ls -R'
                         dir('we-working-api') {
-                            sh 'pwd'  // Opcional: mostrar el directorio actual después del cambio
-                            //sh 'ls -R'
+                            //sh 'pwd'  // Opcional: mostrar el directorio actual después del cambio
+                            sh 'ls -R'
                             sh ''' 
-                            docker compose docker-compose.yml
+                            docker compose up
                             '''
                         }
                     } else {
