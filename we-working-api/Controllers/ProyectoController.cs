@@ -66,6 +66,13 @@ namespace we_working_api.Controllers
             }
             return Ok(result);
         }
+        [HttpGet]
+        [Route("[action]")]
+        public IActionResult GetHola(int idproyecto)
+        {
+            string hola = "hola desde un contenedor,que fue automatizado";
+            return Ok(hola);
+        }
         [HttpPost]
         [Route("[action]")]
         [Authorize(Roles = "2")]
