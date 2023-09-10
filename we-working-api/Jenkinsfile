@@ -24,7 +24,7 @@ pipeline {
                         sh 'pwd'
                         //sh 'ls -R'
                         sh ''' 
-                        docker compose version 
+                        docker compose version  
                         docker-compose -f we-working-api/docker-compose.yml logs
                         '''
                     } else {
